@@ -1,0 +1,6 @@
+gpi_send (0.0.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Fred Gleason <fredg@paravelsystems.com>  Mon, 25 May 2026 12:34:14 -0400
+ -- Fred Gleason <fredg@paravelsystems.com>  @DATESTAMP@

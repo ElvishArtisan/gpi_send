@@ -1,0 +1,106 @@
+                          PadPoint Source Notes
+
+*****************************************************************************
+AudioVault
+*****************************************************************************
+Used for BE AudioVault
+
+Required Configuration:
+Connection Type: IPv4 TCP Connection (Originating)
+       Hostname: IP address of AudioVault instance
+           Port: As assigned by BE
+
+Supported PAD Fields: Album, Artist, Title
+
+*****************************************************************************
+
+
+*****************************************************************************
+Rivendell v2 RLM (NOW Only) (DEPRECATED)
+*****************************************************************************
+Used for the Rivendell Radio Automation 'rlm_padpoint' RLM
+
+Required Configuration:
+Connection Type: IPv4 UDP Packet (Accepting)
+           Port: 3355
+
+Supported PAD Fields: Agency, Album, Artist, Client, Composer, Conductor, 
+                      Description, Group, ISCI, ISRC, Label, Outcue,
+                      Publisher, Song ID, Title, User Defined, Year
+
+Supports NOW data only (no NEXT data). Should be used *only* with Rivendell
+v2.x systems.
+
+Metadata Format String: %n~%h~~%g~%t~%a~%l~%b~%c~%e~%m~%p~%u~%wi~%wc~%r~%s~%y~%o~%i
+*****************************************************************************
+
+
+*****************************************************************************
+Rivendell v2 RLM (NOW/NEXT) (DEPRECATED)
+*****************************************************************************
+Required Configuration:
+Connection Type: IPv4 UDP Packet (Accepting)
+           Port: 3366
+
+Supported PAD Fields: Artist, Group, Title
+
+Supports both NOW and NEXT data
+
+Supports NOW data only (no NEXT data). Should be used *only* with Rivendell
+v2.x systems.
+
+Metadata Format String: %n~%h~%g~%t~%a~%N~%H~%G~%T~%A
+*****************************************************************************
+
+
+*****************************************************************************
+Rivendell JSON
+*****************************************************************************
+Required Configuration:
+Connection Type: IPv4 TCP Packet (Originating)
+           Port: 34289
+
+Supported PAD Fields: ALL
+
+The "full-fidelity" PAD feed for Rivendell. Use this for all feeds from
+Rivendell v3.x or later.
+*****************************************************************************
+
+
+*****************************************************************************
+WideOrbit XML
+*****************************************************************************
+Required Configuration:
+Connection Type: IPv4 TCP Packet (Accepting)
+                 IPv4 TCP Packet (Originating)
+
+Supported PAD Fields: Start DateTime
+                      Artist
+                      Group
+                      Service Name
+		      Agency
+		      Album
+		      Artist
+		      Cart Number
+		      Category
+		      Client
+		      Composer
+		      Conductor
+		      Description
+                      Length
+		      External Annc Type
+		      External Data
+		      External Event ID
+		      ISCI
+		      ISRC
+		      Label
+		      Outcue
+		      Publisher
+		      Recording MediaBrainz ID
+		      Release MediaBrainz ID
+		      Song ID
+		      Station		      
+                      Title
+		      User Defined
+
+Supports NOW data only (no NEXT data).

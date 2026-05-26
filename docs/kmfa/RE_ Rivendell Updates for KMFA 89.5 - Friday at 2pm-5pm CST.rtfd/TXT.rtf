@@ -1,0 +1,106 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0\cname textColor;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 From: Chris Maynard <cmaynard@kmfa.org>\
+Subject: RE: Rivendell Updates for KMFA 89.5 - Friday at 2pm-5pm CST\
+Date: February 13, 2024 at 17:53:42 EST\
+To: Anthony McSpadden <AMcSpadden@kmfa.org>, Jeffrey Blair <JBlair@kmfa.org>, Fred Gleason <fredg@paravelsystems.com>\
+Cc: Mark Stennett <mark@stennett.com>, Mark Stennett <mstennett@kmfa.org>\
+\
+Hi Fred,\
+\'a0\
+Hope you\'92re having a great week! We\'92re looking forward to working with you on Thursday the 15th at 2pm CST.\uc0\u8232 \u8232 Regarding PAD Data for HD Radio\'85\
+\'a0\
+I\'92ve been digging through my old code and remembered that if we can get Rivendell\'92s PyPAD to create an .id3 file every time a new piece of music starts playing, then there is a Windows/DOS command line utility from the iBiquity HDP Program Info Reference SDK that can live on the Importer/Exporter, ingest that from a network shared path, and send it to itself at 127.0.0.1 on the Importer/Exporter on UDP port 11000. I\'92ve attached a known working .id3 tag to this email that we can model it after.\
+\'a0\
+Better yet, if Rivendell\'92s PyPAD has the ability to mimic the format of the UDP packet coming from the Windows/DOS command line utility, then Rivendell could send PAD data directly to the Importer/Exporter on UDP port 10100. I\'92ve attached 4 versions of the same UDP packet capture utilizing the attached id3 tag, to show what that UDP packet looks like in Text, Decimal, Hex, and ASCII Names. There are a couple head and tail characters in the UDP packet that don\'92t seem to matter so much, and I even question whether it cares how many NULL characters exist within it, since they appeared to change as I was changing the data inside the id3 tag and doing some testing, but the overall format works.\
+\'a0\
+This will allow us to get basic Composer & Title data going on HD Radio, and we can set a static KMFA logo on the Importer/Exporter for what gets displayed on car radios.\
+\'a0\
+At some point in the future, it would be fun to talk more about HD Radio PAD Data on the phone with you, because they do support more ID3 tag fields, as well as some interesting capabilities with album artwork, QR codes, and links for advertising and underwriting, as well as dynamic messaging. All of that is detailed in the SDK, which I\'92m sure has been updated over the past 15 years. We\'92d have to request a current version of it to be sure.\
+\'a0\
+Informational links if you\'92re curious:\
+https://hdradio.com/broadcasters/engineering-support/program-services-data-psd/\
+https://hdradio.com/broadcasters/engineering-support/program-info/\
+https://hdradio.com/broadcasters/engineering-support/program-info-guidelines-for-enhanced-product-token/\
+https://hdradio.com/broadcasters/engineering-support/station-logo-service/\
+https://hdradio.com/broadcasters/engineering-support/artist-experience/\
+https://hdradio.com/broadcasters/engineering-support/high-quality-consistent-multicast-engineering/\
+\'a0\
+Kind Regards,\
+Chris\
+\'a0\
+\'a0\
+\'a0\
+From: Chris Maynard \uc0\u8232 Sent: Thursday, February 8, 2024 4:44 PM\u8232 To: Anthony McSpadden <AMcSpadden@kmfa.org>; Jeffrey Blair <JBlair@kmfa.org>; Fred Gleason <fredg@paravelsystems.com>\u8232 Cc: Mark Stennett <mark@stennett.com>; Mark Stennett <mstennett@kmfa.org>\u8232 Subject: RE: Rivendell Updates for KMFA 89.5 - Friday at 2pm-5pm CST\
+\'a0\
+Sounds good, would you please send an updated calendar invitation for Thursday February 15th at 2pm-5pm CST?\
+\'a0\
+Thank you\
+\'a0\
+From: Anthony McSpadden <AMcSpadden@kmfa.org> \uc0\u8232 Sent: Wednesday, February 7, 2024 12:39 PM\u8232 To: Chris Maynard <cmaynard@kmfa.org>; Jeffrey Blair <JBlair@kmfa.org>; Fred Gleason <fredg@paravelsystems.com>\u8232 Cc: Mark Stennett <mark@stennett.com>; Mark Stennett <mstennett@kmfa.org>\u8232 Subject: RE: Rivendell Updates for KMFA 89.5 - Friday at 2pm-5pm CST\
+\'a0\
+It does, but on the 15th Sara will be here. I have a board meeting that afternoon.\
+\'a0\
+Anthony D. McSpadden\
+Director of Broadcasting & Content\
+KMFA Classical 89.5\
+Direct: 512.628.4750 |amcspadden@kmfa.org| kmfa.org\
+PO Box 6200, Austin, TX 78762 | Studios: 41 Navasota St., Austin, TX 78702\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 {{\NeXTGraphic unknown.jpg \width300 \height495 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \
+\'a0\
+From: Chris Maynard <cmaynard@kmfa.org> \uc0\u8232 Sent: Wednesday, February 7, 2024 12:18 PM\u8232 To: Jeffrey Blair <JBlair@kmfa.org>; Fred Gleason <fredg@paravelsystems.com>\u8232 Cc: Anthony McSpadden <AMcSpadden@kmfa.org>; Mark Stennett <mark@stennett.com>; Mark Stennett <mstennett@kmfa.org>\u8232 Subject: RE: Rivendell Updates for KMFA 89.5 - Friday at 2pm-5pm CST\
+\'a0\
+Thursday Feb 15th 2pm-5pm CST works for me too.\
+\'a0\
+Anthony, does that work for you?\
+\'a0\
+From: Jeffrey Blair <JBlair@kmfa.org> \uc0\u8232 Sent: Wednesday, February 7, 2024 11:50 AM\u8232 To: Fred Gleason <fredg@paravelsystems.com>; Chris Maynard <cmaynard@kmfa.org>\u8232 Cc: Anthony McSpadden <AMcSpadden@kmfa.org>; Mark Stennett <mark@stennett.com>; Mark Stennett <mstennett@kmfa.org>\u8232 Subject: RE: Rivendell Updates for KMFA 89.5 - Friday at 2pm-5pm CST\
+\'a0\
+Thursday Feb 15 is good for me too.\
+\'a0\
+Thanks\
+Jeffrey\
+\'a0\
+\'a0\
+Jeffrey Blair\
+Production Manager/Announcer\
+KMFA Classical 89.5\
+512.472.8160 | jblair@kmfa.org | kmfa.org\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 {{\NeXTGraphic unknown.jpg \width300 \height495 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \
+\'a0\
+From: Fred Gleason <fredg@paravelsystems.com> \uc0\u8232 Sent: Wednesday, February 7, 2024 11:22 AM\u8232 To: Chris Maynard <cmaynard@kmfa.org>\u8232 Cc: Jeffrey Blair <JBlair@kmfa.org>; Anthony McSpadden <AMcSpadden@kmfa.org>; Mark Stennett <mark@stennett.com>; Mark Stennett <mstennett@kmfa.org>\u8232 Subject: Re: Rivendell Updates for KMFA 89.5 - Friday at 2pm-5pm CST\
+\'a0\
+On Feb 7, 2024, at 12:17\uc0\u8239 PM, Chris Maynard <cmaynard@kmfa.org> wrote:\
+\'a0\
+Okay, would you prefer to reschedule, or is my availability for 1-hour enough time on Friday?\
+\'a0\
+You can of course stay logged into the machines for as long as you need to\'85\
+\'a0\
+It would definitely be helpful for me to see the settings for the Studio->Transmitter Rivendell server synchronization configuration so I understand how that works.\
+\'a0\
+I agree that that would be a Good Thing.\
+\'a0\
+I\'92m fine with rescheduling. What say Thursday next week (15 February) at the same time?\
+\'a0\
+Cheers!\
+\'a0\
+\'a0\
+|---------------------------------------------------------------------|\
+| Frederick F. Gleason, Jr. | \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 Chief Developer \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 |\
+| \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 | \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 Paravel Systems \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 |\
+|---------------------------------------------------------------------|\
+| \'a0 \'a0 \'a0 \'a0 A room without books is like a body without a soul. \'a0 \'a0 \'a0 \'a0 |\
+| \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 |\
+| \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 -- Cicero \'a0 |\
+|---------------------------------------------------------------------|\
+}

@@ -1,0 +1,16 @@
+[Unit]
+Description=GPI network messenger
+After=network.target remote-fs.target nss-lookup.target
+ConditionPathExists=/etc/gpi_send.conf
+
+[Service]
+Type=simple
+ExecStart=@prefix@/sbin/gpi_send
+PrivateTmp=true
+Restart=always
+RestartSec=2
+StartLimitInterval=120
+StartLimitBurst=50
+
+[Install]
+WantedBy=multi-user.target

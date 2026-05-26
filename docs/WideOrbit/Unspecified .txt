@@ -1,0 +1,19 @@
+<nowplaying>
+<sched_time>34738000</sched_time>
+<air_time>34549000</air_time>
+<stack_pos></stack_pos>
+<title>Google-FM</title>
+<artist>Don't Be Evil</artist>
+<trivia>Techno</trivia>
+<category>LIN</category>
+<cart>2004</cart>
+<intro>0</intro>
+<end></end>
+<station>WideOrbit 104.5</station>
+<duration>6000</duration>
+<media_type>UNSPECIFIED</media_type>
+<milliseconds_left></milliseconds_left>
+<Dub></Dub>
+<K-Love field></K-Love field>
+<Voice Talent></Voice Talent>
+</nowplaying>

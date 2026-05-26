@@ -1,0 +1,19 @@
+<nowplaying>
+<sched_time>33779600</sched_time>
+<air_time>33813000</air_time>
+<stack_pos></stack_pos>
+<title>Whip It</title>
+<artist>Devo</artist>
+<trivia></trivia>
+<category>080</category>
+<cart>3292</cart>
+<intro>19000</intro>
+<end></end>
+<station>WideOrbit 104.5</station>
+<duration>137200</duration>
+<media_type>SONG</media_type>
+<milliseconds_left></milliseconds_left>
+<Dub></Dub>
+<K-Love field></K-Love field>
+<Voice Talent></Voice Talent>
+</nowplaying>

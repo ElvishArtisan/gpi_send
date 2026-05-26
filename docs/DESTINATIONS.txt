@@ -1,0 +1,196 @@
+                           PadPoint Destination Notes
+
+*****************************************************************************
+Audemat FMB80 RDS Encoder
+*****************************************************************************
+Used for the Audemat FMB80 RDS Encoder using UDP connectivity
+
+Required Configuration:
+Connection Type: IPv4 UDP Packet (Originating)
+       Hostname: IP Address of encoder unit
+           Port: Varies
+
+Supported PAD Fields: Artist, Title 
+
+*****************************************************************************
+
+
+*****************************************************************************
+ANDO AdInjector
+*****************************************************************************
+Used for the ANDO 'AdInjector' spot replacement platform by Triton Media.
+
+Required Configuration:
+Connection Type: IPv4 UDP Packet (Originating)
+       Hostname: IP Address of AdInjector system
+           Port: 5273
+
+Supported PAD Fields: Album, Artist, Group, Label, Title 
+
+*****************************************************************************
+
+
+*****************************************************************************
+IceCast v2
+*****************************************************************************
+Used for the IceCast v2 Streaming Server by Xiph.org
+
+Required Configuration:
+        Type: Icecast v2
+  Channel ID: Icecast mountpoint (e.g. '/MyMountPoint')
+
+Connection Settings:
+  Connection Type: HTTP GET
+         Hostname: Hostname or IP address of Icecast Server
+             Port: (default '8000')
+         Username: (default 'source')
+         Password: (default 'hackme')
+
+Supported PAD Fields: Artist, Title 
+
+*****************************************************************************
+
+
+*****************************************************************************
+ID3 Tag
+*****************************************************************************
+Emits an ID3 v2.4 tag.
+
+Required Configuration:
+Connection Type: File
+       Filename: As desired
+
+Supported PAD Fields: Album [TALB], Artist [TPE1], Composer [TCOM],
+                      Conductor [TPE3], ISRC [TSRC], Publisher [TPUB],
+		      Title [TIT2] 
+
+*****************************************************************************
+
+
+*****************************************************************************
+Innovonics NOVIA 272
+*****************************************************************************
+Used for the NOVIA 272 FM Processor & Stereo Generator manufactured by
+Innovonics
+
+Required Configuration:
+Connection Type: IPv4 TCP Connection (Originating)
+       Hostname: IP address of NOVIA unit
+           Port: 10001
+
+Supported PAD Fields: Artist, Title
+
+The destination port can be set on the NOVIA unit with the 'TCP Port'
+setting in the 'Telnet' section in the web interface.
+
+The 'Channel ID' field in PadPoint's 'Destination Settings can be used to
+specify which RDS fields to use for transmitting PAD, as follows:
+
+    'TEXT' - RadioText
+    'DPS' - "Dynamic" PS.
+    'DPSTEXT' - Both RadioText and "Dynamic' PS
+
+By default, the destination will send PAD to RadioText only.
+
+*****************************************************************************
+
+
+*****************************************************************************
+SecureNet Systems DCS
+*****************************************************************************
+Used for the DCS Module by SecureNet Systems
+
+Required Configuration:
+Connection Type: IPv4 TCP Connection (Originating)
+       Hostname: IP address of DCS instance
+           Port: 7171
+
+Supported PAD Fields: Album, Artist, Label, Title 
+
+*****************************************************************************
+
+
+*****************************************************************************
+Sirius/XM PAD
+*****************************************************************************
+Used for PAD delivery to Sirius/XM Satellite Radio
+
+Required Configuration:
+Connection Type: IPv4 TCP Server (Accepting)
+       Password: Varies (default 'testing')
+   Channel Code: Varies, provided by Sirius/XM
+
+Supported PAD Fields: Album, Artist, Composer, ISRC, Title 
+
+*****************************************************************************
+
+
+*****************************************************************************
+Shoutcast (Generic and Live365)
+*****************************************************************************
+Used for the Shoutcast Streaming Platform by Nullsoft
+
+Required Configuration:
+Connection Type: IPv4 TCP Connection (Originating)
+       Hostname: Hostname or IP address of Shoutcast Server
+           Port: Varies (default 8000)
+       Password: Varies (default 'testing')
+
+
+Supported PAD Fields (Generic): Artist, Title 
+Supported PAD Fields (Live365): Artist, Title 
+
+*****************************************************************************
+
+
+*****************************************************************************
+Telos ZIPStream (ProStream)
+*****************************************************************************
+Used for the ZIPStream family of stream encoders made by The Telos Alliance
+(Product was formerly known as the 'ProStream').
+
+Required PadPoint Configuration:
+Connection Type: IPv4 TCP Connection (Originating)
+       Hostname: Hostname or IP address of ZIPStream LAN interface
+           Port: Varies, default 9000
+
+Supported PAD Fields: Artist, Title, UserDefined
+
+NOTE: Metadata on the ZIPStream should be configured as follows:
+
+                                 Type: TCP on Specific Port
+  Local port to accept TCP connection: Locally determined, must be unique to
+                                       the ZIPStream unit. Valid range is
+                                       1025 - 65535.  On a ZIPStream hardware
+                                       unit, this is typically hardwired to
+                                       9000.
+                      Metadata filter: PadPoint
+
+If a 'PadPoint' metadata filter is not preinstalled on the ZIPStream, it can
+be added by copying the 'PadPoint.lua' script (located in the PadPoint
+documentation directory) to the 'Filter' directory on the ZIPStream and the
+restarting the zipstream service.  See the ZIPStream documentation for further
+details.
+*****************************************************************************
+
+
+*****************************************************************************
+XM PAD
+*****************************************************************************
+'Old style' PAD used by XM Satellite Radio.  Essentially dead today -- see
+'Sirius/XM PAD' for the modern replacement.
+
+*****************************************************************************
+
+
+*****************************************************************************
+Rivendell JSON
+*****************************************************************************
+Required Configuration:
+Connection Type: IPv4 TCP Packet (Accepting), File
+           Port: 34289
+
+Supported PAD Fields: ALL
+
+The "full-fidelity" PAD feed for Rivendell. This was also once known as the
+"Rivendell-v3 JSON Server".

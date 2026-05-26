@@ -1,0 +1,21 @@
+<nowplaying>
+<sched_time>
+</sched_time>
+<air_time></air_time>
+<stack_pos></stack_pos>
+<title>Delilah Segment</title>
+<artist></artist>
+<trivia></trivia>
+<category></category>
+<cart></cart>
+<intro></intro>
+<end></end>
+<station>WideOrbit 104.5</station>
+<duration></duration>
+<media_type></media_type>
+<milliseconds_left></milliseconds_left
+><Dub></Dub>
+<K-Love field></K-Love field>
+<Voice Talent></Voice Talent>
+</nowplaying>
+

@@ -1,0 +1,10 @@
+This is the installation file for the gpi_send package.
+
+MANDATORY PREREQUISITES
+-----------------------
+
+Qt5 Toolkit, v5.9 or better (http://www.qt.io/).
+
+libgpiod, v2.2.1 or later (https://libgpiod.readthedocs.io/en/master/).
+ Low-level library for interacting with General Purpose Input/Output (GPIO)
+ devices on Linux.

@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+
+build:	
+	dh_update_autotools_config
+	dh_autoreconf
+	./configure --prefix=/usr
+	make $(DEBUILD_MAKE_ARGS)
+	make -C tests tests
+
+binary:	
+	dh_testroot
+	dh_prep
+	dh_auto_install
+	dh_installchangelogs ChangeLog
+	mkdir -p debian/gpi_send/usr/share/gpi_send
+	cp conf/gpi_send-sample.conf debian/gpi_send/usr/share/gpi_send/
+	dh_strip_nondeterminism
+	dh_compress
+	dh_fixperms
+	dh_missing
+	dh_dwz
+	dh_strip
+	dh_makeshlibs
+	dh_shlibdeps
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+%:	
+	dh $@

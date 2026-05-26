@@ -1,0 +1,19 @@
+<nowplaying>
+<sched_time></sched_time>
+<air_time></air_time>
+<stack_pos></stack_pos>
+<title></title>
+<artist></artist>
+<trivia></trivia>
+<category></category>
+<cart></cart>
+<intro></intro>
+<end></end><
+station>WideOrbit 102.1</station>
+<duration></duration>
+<media_type></media_type>
+<milliseconds_left></milliseconds_left>
+<Album></Album>
+<Composer></Composer>
+<Dub's field></Dub's field>
+</nowplaying>
