@@ -5,7 +5,7 @@ ConditionPathExists=/etc/gpi_send.conf
 
 [Service]
 Type=simple
-ExecStart=@prefix@/sbin/gpi_send
+ExecStart=@prefix@/bin/gpi_send
 PrivateTmp=true
 Restart=always
 RestartSec=2
