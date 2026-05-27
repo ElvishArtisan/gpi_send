@@ -91,6 +91,12 @@ QString Config::command(int n) const
 }
 
 
+int Config::buttonByOffset(int offset) const
+{
+  return d_offset_to_button_map.value(offset,-1);
+}
+
+
 bool Config::load(const QString &filename)
 {
   Profile *p=new Profile();
@@ -143,7 +149,8 @@ bool Config::load(const QString &filename)
   int offset=p->intValue(section,"Offset",-1,&ok);
   while(ok) {
     d_button_offsets.push_back(offset);
-
+    d_offset_to_button_map[offset]=count;
+    
     QHostAddress addr;
     addr=p->addressValue(section,"DestinationAddress",
 			 d_default_destination_address);
@@ -225,4 +232,5 @@ void Config::clear()
 {
   d_chip_device=CONFIG_DEFAULT_CHIP_DEVICE;
   d_trigger_condition=GPIOD_LINE_EDGE_RISING;
+  d_offset_to_button_map.clear();
 }

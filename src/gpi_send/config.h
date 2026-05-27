@@ -23,6 +23,7 @@
 
 #include <QHostAddress>
 #include <QList>
+#include <QMap>
 #include <QString>
 
 #include <gpiod.h>
@@ -47,6 +48,7 @@ class Config
   QHostAddress destinationAddress(int n=-1) const;
   uint16_t destinationPort(int n=-1) const;
   QString command(int n) const;
+  int buttonByOffset(int offset) const;
   bool load(const QString &filename=CONFIG_DEFAULT_CONFIG_FILENAME);
   QString dump();
   void clear();
@@ -62,6 +64,7 @@ class Config
   unsigned d_default_destination_port;
   QList<unsigned> d_destination_ports;
   QStringList d_commands;
+  QMap<int,int> d_offset_to_button_map;
 };
 
 

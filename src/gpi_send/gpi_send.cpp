@@ -90,29 +90,42 @@ MainObject::MainObject()
 
   InitializeGpio();
 
-  //
-  // Event Loop
-  //
+  InitializeNetworking();
+
+  EventLoop();
+}
+
+
+void MainObject::EventLoop()
+{
   int n;
   struct gpiod_edge_event *event;
   while(1==1) {
     switch(gpiod_line_request_wait_edge_events(d_line_request,-1)) {
-    case 0:  // Timeout. Should never happen.
+    case 0:  // This should never happen.
       syslog(LOG_WARNING,"GPIO device \"%s\" timed out",
 	     d_config->chipDevice().toUtf8().constData());
       break;
 
-    case 1:  // An edge transition happened!
+    case 1:
       if((n=gpiod_line_request_read_edge_events(d_line_request,d_edge_event_buffer,4))>0) {
-	printf("TRANSITION!\n");
 	for(unsigned long i=0;i<(unsigned long)n;i++) {
 	  event=gpiod_edge_event_buffer_get_event(d_edge_event_buffer,i);
-	  printf("  OFFSET: %u\n",gpiod_edge_event_get_line_offset(event));
+	  int offset=gpiod_edge_event_get_line_offset(event);
+	  int button=d_config->buttonByOffset(offset);
+	  d_send_socket->writeDatagram(d_config->command(button).toUtf8(),
+				       d_config->destinationAddress(button),
+				       d_config->destinationPort(button));
+	  syslog(LOG_DEBUG,"sending %s to %s:%u",
+		 d_config->command(button).toUtf8().constData(),
+		 d_config->destinationAddress(button).toString().
+		 toUtf8().constData(),
+		 0xFFFF&d_config->destinationPort(button));
 	}
       }
       break;
 
-    case -1: // An error occurred.
+    case -1:
       syslog(LOG_ERR,"GPIO device \"%s\" threw an error [%s]",
 	     d_config->chipDevice().toUtf8().constData(),strerror(errno));
       exit(1);
@@ -170,6 +183,12 @@ void MainObject::InitializeGpio()
   }
 
   d_edge_event_buffer=gpiod_edge_event_buffer_new(4);
+}
+
+
+void MainObject::InitializeNetworking()
+{
+  d_send_socket=new QUdpSocket(this);
 }
 
 

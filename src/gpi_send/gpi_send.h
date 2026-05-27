@@ -22,6 +22,7 @@
 #define GPI_SEND_H
 
 #include <QObject>
+#include <QUdpSocket>
 
 #include <gpiod.h>
 
@@ -36,6 +37,7 @@ class MainObject : public QObject
   MainObject();
 
  private:
+  void EventLoop();
   void InitializeGpio();
   struct gpiod_chip *d_chip;
   struct gpiod_chip_info *d_info;
@@ -44,6 +46,8 @@ class MainObject : public QObject
   struct gpiod_request_config *d_request_config;
   struct gpiod_line_request *d_line_request;
   struct gpiod_edge_event_buffer *d_edge_event_buffer;
+  void InitializeNetworking();
+  QUdpSocket *d_send_socket;
   Config *d_config;
 };
 
