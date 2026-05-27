@@ -1,5 +1,5 @@
 2026-05-26 Fred Gleason <fredg@paravelsystems.com>
 	* Initial package creation.
-2026-05-26 Fred Gleason <fredg@paravelsystems.com>
+2026-05-27 Fred Gleason <fredg@paravelsystems.com>
 	* Added gpi_send(1).
 	* Implemented a gpi_send.conf(5) configuration file.
