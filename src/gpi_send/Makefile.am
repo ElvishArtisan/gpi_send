@@ -18,5 +18,31 @@
 ##
 ## Use automake to process this into a Makefile.in
 
-SUBDIRS = gpi_send\
-          gpioscan
+AM_CPPFLAGS = -Wall -DPREFIX=\"$(prefix)\" -Wno-strict-aliasing -std=c++11 -fPIC -I$(top_srcdir)/lib @QT5_CLI_CFLAGS@ @LIBGPIOD_CFLAGS@
+MOC = @QT_MOC@
+
+# The dependency for qt's Meta Object Compiler (moc)
+moc_%.cpp:	%.h
+	$(MOC) $< -o $@
+
+bin_PROGRAMS = gpi_send
+
+dist_gpi_send_SOURCES = cmdswitch.cpp cmdswitch.h\
+                        config.cpp config.h\
+                        gpi_send.cpp gpi_send.h\
+                        profile.cpp profile.h
+
+nodist_gpi_send_SOURCES = moc_gpi_send.cpp
+
+gpi_send_LDADD = @QT5_CLI_LIBS@ @LIBGPIOD_LIBS@
+
+CLEANFILES = *~\
+             *.qm\
+             moc_*
+
+MAINTAINERCLEANFILES = *~\
+                       *.tar.gz\
+                       aclocal.m4\
+                       configure\
+                       Makefile.in\
+                       moc_*

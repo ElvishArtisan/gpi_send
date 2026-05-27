@@ -1,6 +1,6 @@
-// gpioscan.h
+// gpi_send.h
 //
-// Enumerate GPIO devices.
+// Send network messages in response to GPIO events
 //
 //   (C) Copyright 2026 Fred Gleason <fredg@paravelsystems.com>
 //
@@ -18,14 +18,16 @@
 //   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 //
 
-#ifndef GPIOSCAN_H
-#define GPIOSCAN_H
+#ifndef GPI_SEND_H
+#define GPI_SEND_H
 
 #include <QObject>
 
 #include <gpiod.h>
 
-#define USAGE "--device=<dev-name> [--device=<dev-name-2>] [...]\n"
+#include "config.h"
+
+#define USAGE "[-d] [--dump-config]\n"
 
 class MainObject : public QObject
 {
@@ -34,12 +36,16 @@ class MainObject : public QObject
   MainObject();
 
  private:
-  void ListChipInfo(struct gpiod_chip *chip);
-  void ListChipLine(struct gpiod_chip *chip,unsigned offset);
+  void InitializeGpio();
   struct gpiod_chip *d_chip;
   struct gpiod_chip_info *d_info;
-  struct gpiod_line *d_lines;
+  struct gpiod_line_config *d_line_config;
+  struct gpiod_line_settings *d_line_settings;
+  struct gpiod_request_config *d_request_config;
+  struct gpiod_line_request *d_line_request;
+  struct gpiod_edge_event_buffer *d_edge_event_buffer;
+  Config *d_config;
 };
 
 
-#endif  // GPIOSCAN_H
+#endif  // GPI_SEND_H

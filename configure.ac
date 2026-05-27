@@ -194,6 +194,7 @@ AC_CONFIG_FILES([ \
     debian/source/Makefile \
     helpers/Makefile \
     docs/Makefile \
+    src/gpi_send/Makefile \
     src/gpioscan/Makefile \
     src/Makefile \
     systemd/Makefile \
