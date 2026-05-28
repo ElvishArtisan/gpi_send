@@ -20,15 +20,15 @@
 
 install-exec-local:	
 	mkdir -p $(DESTDIR)/lib/systemd/system
-	cp gpi_send.service $(DESTDIR)/lib/systemd/system/gpi_send.service
+	cp gpisend.service $(DESTDIR)/lib/systemd/system/gpisend.service
 	./daemon-reload.sh
 
 uninstall-local:	
-	rm -f $(DESTDIR)/lib/systemd/system/gpi_send.service
+	rm -f $(DESTDIR)/lib/systemd/system/gpisend.service
 	./daemon-reload.sh
 
 EXTRA_DIST = daemon-reload.sh\
-             gpi_send.service.in
+             gpisend.service.in
 
 CLEANFILES = *~
 

@@ -1,14 +1,25 @@
 ## Makefile.am
 ##
-## Top level Makefile.am for gpi_send
+## (C) Copyright 2002-2026 Fred Gleason <fredg@paravelsystems.com>
+##
+##   This program is free software; you can redistribute it and/or modify
+##   it under the terms of the GNU General Public License version 2 as
+##   published by the Free Software Foundation.
+##
+##   This program is distributed in the hope that it will be useful,
+##   but WITHOUT ANY WARRANTY; without even the implied warranty of
+##   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##   GNU General Public License for more details.
+##
+##   You should have received a copy of the GNU General Public
+##   License along with this program; if not, write to the Free Software
+##   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+##
 ##
 ## Use automake to process this into a Makefile.in
-##
-##   (C) Copyright 2011-2024 Fred Gleason <fredg@paravelsystems.com>
-##       All Rights Reserved.
-##
 
 SUBDIRS = helpers\
+          conf\
           debian\
           docs\
           src\
@@ -23,19 +34,17 @@ deb:	dist
 	./build_debs.sh
 
 rpm:	dist
-	cp gpi_send-$(VERSION).tar.gz $(HOME)/rpmbuild/SOURCES/
-	$(RPMBUILD) -ba --target $(ARCH)-$(VENDOR)-linux gpi_send.spec
-	mv $(HOME)/rpmbuild/RPMS/$(ARCH)/gpi_send*.rpm $(top_srcdir)/
-	mv $(HOME)/rpmbuild/SRPMS/gpi_send*.src.rpm $(top_srcdir)/
-	rm $(HOME)/rpmbuild/SOURCES/gpi_send-$(VERSION).tar.gz
-	rm -rf $(HOME)/rpmbuild/BUILD/gpi_send-$(VERSION)
+	cp gpisend-$(VERSION).tar.gz $(HOME)/rpmbuild/SOURCES/
+	$(RPMBUILD) -ba --target $(ARCH)-$(VENDOR)-linux gpisend.spec
+	mv $(HOME)/rpmbuild/RPMS/$(ARCH)/gpisend*.rpm $(top_srcdir)/
+	mv $(HOME)/rpmbuild/SRPMS/gpisend*.src.rpm $(top_srcdir)/
+	rm $(HOME)/rpmbuild/SOURCES/gpisend-$(VERSION).tar.gz
+	rm -rf $(HOME)/rpmbuild/BUILD/gpisend-$(VERSION)
 
 EXTRA_DIST = autogen.sh\
-             CODINGSTYLE\
              get_target.sh\
              get_distro.pl\
-             PACKAGE_VERSION\
-             gpi_send.spec.in
+             PACKAGE_VERSION
 
 CLEANFILES = *~\
              *.buildinfo\
@@ -54,7 +63,7 @@ DISTCLEANFILES = *.spec\
                  build_debs.sh\
                  config.guess\
                  config.sub\
-                 gpi_send.spec
+                 gpisend.spec
 
 MAINTAINERCLEANFILES = *~\
                        *.spec\

@@ -1,4 +1,4 @@
-// gpi_send.cpp
+// gpisend.cpp
 //
 // Emit network messages in response to GPI events
 //
@@ -27,7 +27,7 @@
 #include <QString>
 
 #include "cmdswitch.h"
-#include "gpi_send.h"
+#include "gpisend.h"
 
 MainObject::MainObject()
 {
@@ -44,7 +44,7 @@ MainObject::MainObject()
   d_line_request=NULL;
   d_edge_event_buffer=NULL;
 
-  CmdSwitch *cmd=new CmdSwitch("gpi_send",VERSION,USAGE);
+  CmdSwitch *cmd=new CmdSwitch("gpisend",VERSION,USAGE);
   for(int i=0;i<cmd->keys();i++) {
     if(cmd->key(i)=="-d") {
       debug=true;
@@ -55,7 +55,7 @@ MainObject::MainObject()
       cmd->setProcessed(i,true);
     }
     if(!cmd->processed(i)) {
-      fprintf(stderr,"gpi_send: unknown option \"%s\"\n",
+      fprintf(stderr,"gpisend: unknown option \"%s\"\n",
 	      cmd->key(i).toUtf8().constData());
       exit(1);
     }
@@ -65,10 +65,10 @@ MainObject::MainObject()
   // Open Syslog
   //
   if(debug) {
-    openlog("gpi_send",LOG_PERROR,LOG_USER);
+    openlog("gpisend",LOG_PERROR,LOG_USER);
   }
   else {
-    openlog("gpi_send",0,LOG_USER);
+    openlog("gpisend",0,LOG_USER);
   }
 
   //
@@ -175,7 +175,7 @@ void MainObject::InitializeGpio()
     exit(1);
   }
   
-  gpiod_request_config_set_consumer(d_request_config,"gpi_send");
+  gpiod_request_config_set_consumer(d_request_config,"gpisend");
   gpiod_request_config_set_event_buffer_size(d_request_config,0); // Use default
   if((d_line_request=gpiod_chip_request_lines(d_chip,d_request_config,d_line_config))==NULL) {
     syslog(LOG_ERR,"failed to create request [%s]",strerror(errno));

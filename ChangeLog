@@ -7,3 +7,5 @@
 	* Implemented UDP network message delivery.
 2026-05-27 Fred Gleason <fredg@paravelsystems.com>
 	* Corrected the installation location in 'gpi_send.service'.
+2026-05-28 Fred Gleason <fredg@paravelsystems.com>
+	* Changed the package name from 'gpi_send' to 'gpisend'.

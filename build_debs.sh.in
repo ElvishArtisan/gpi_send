@@ -22,11 +22,11 @@
 #   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #
 
-tar -zvxf gpi_send-@VERSION@.tar.gz
-mv gpi_send-@VERSION@.tar.gz gpi_send_@VERSION@.orig.tar.gz
+tar -zvxf gpisend-@VERSION@.tar.gz
+mv gpisend-@VERSION@.tar.gz gpisend_@VERSION@.orig.tar.gz
 
-cd gpi_send-@VERSION@
+cd gpisend-@VERSION@
 dpkg-buildpackage -us -uc
 cd ..
 
-rm -rf gpi_send-@VERSION@
+rm -rf gpisend-@VERSION@

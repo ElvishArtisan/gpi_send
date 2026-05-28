@@ -1,6 +1,6 @@
 // config.cpp
 //
-// Configuration for gpi_send(1)
+// Configuration for gpisend(1)
 //
 //   (C) Copyright 2026 Fred Gleason <fredg@paravelsystems.com>
 //

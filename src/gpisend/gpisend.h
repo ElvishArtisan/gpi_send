@@ -1,4 +1,4 @@
-// gpi_send.h
+// gpisend.h
 //
 // Send network messages in response to GPIO events
 //
@@ -18,8 +18,8 @@
 //   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 //
 
-#ifndef GPI_SEND_H
-#define GPI_SEND_H
+#ifndef GPISEND_H
+#define GPISEND_H
 
 #include <QObject>
 #include <QUdpSocket>
@@ -52,4 +52,4 @@ class MainObject : public QObject
 };
 
 
-#endif  // GPI_SEND_H
+#endif  // GPISEND_H

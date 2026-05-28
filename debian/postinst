@@ -1,12 +1,15 @@
 #!/bin/sh
-# postinst script for padpoint
+# postinst script for gpisend
 
 case "$1" in
     configure)
       ldconfig
+      if test ! -f /etc/gpisend.conf ; then
+	  cp /usr/share/gpisend/gpisend-sample.conf /etc/gpisend.conf
+      fi
       /bin/systemctl daemon-reload
-      /bin/systemctl enable gpi_send.service
-      /bin/systemctl restart gpi_send.service
+      /bin/systemctl enable gpisend.service
+      /bin/systemctl restart gpisend.service
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

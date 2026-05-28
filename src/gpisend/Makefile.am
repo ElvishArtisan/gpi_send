@@ -25,16 +25,16 @@ MOC = @QT_MOC@
 moc_%.cpp:	%.h
 	$(MOC) $< -o $@
 
-bin_PROGRAMS = gpi_send
+bin_PROGRAMS = gpisend
 
-dist_gpi_send_SOURCES = cmdswitch.cpp cmdswitch.h\
+dist_gpisend_SOURCES = cmdswitch.cpp cmdswitch.h\
                         config.cpp config.h\
-                        gpi_send.cpp gpi_send.h\
+                        gpisend.cpp gpisend.h\
                         profile.cpp profile.h
 
-nodist_gpi_send_SOURCES = moc_gpi_send.cpp
+nodist_gpisend_SOURCES = moc_gpisend.cpp
 
-gpi_send_LDADD = @QT5_CLI_LIBS@ @LIBGPIOD_LIBS@
+gpisend_LDADD = @QT5_CLI_LIBS@ @LIBGPIOD_LIBS@
 
 CLEANFILES = *~\
              *.qm\

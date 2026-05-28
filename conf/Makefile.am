@@ -7,10 +7,16 @@
 ##
 ## Use automake to process this into a Makefile.in
 
-EXTRA_DIST = gpi_send-sample.conf-sample
+install-exec-local:	
+	mkdir -p $(DESTDIR)@prefix@/share/gpisend
+	cp gpisend-sample.conf $(DESTDIR)@prefix@/share/gpisend/
+
+uninstall-local:	
+	rm -f $(DESTDIR)@prefix@/share/gpisend/gpisend-sample.conf
+
+EXTRA_DIST = gpisend-sample.conf
 
 CLEANFILES = *~
-DISTCLEANFILES = rdfeed.conf
 MAINTAINERCLEANFILES = *~\
                        aclocal.m4\
                        configure\

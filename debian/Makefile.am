@@ -1,6 +1,6 @@
 ## Makefile.am
 ##
-## Makefile.am for gpi_send debian/
+## Makefile.am for gpisend debian/
 ##
 ##   (C) Copyright 2026 Fred Gleason <fredg@paravelsystems.com>
 ##
@@ -22,7 +22,8 @@
 
 SUBDIRS = source
 
-EXTRA_DIST = changelog.src\
+EXTRA_DIST = changelog\
+             changelog.src\
              control\
              copyright\
              postinst\

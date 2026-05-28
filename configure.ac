@@ -1,6 +1,6 @@
 dnl configure.ac
 dnl
-dnl Autoconf configuration for gpi_send.
+dnl Autoconf configuration for gpisend.
 dnl
 dnl Use autoconf to process this into a configure script
 dnl
@@ -8,7 +8,7 @@ dnl   (C) Copyright 2011-206 Fred Gleason <fredg@paravelsystems.com>
 dnl       All Rights Reserved.
 dnl
 
-AC_INIT([gpi_send],m4_esyscmd(cat PACKAGE_VERSION))
+AC_INIT([gpisend],m4_esyscmd(cat PACKAGE_VERSION))
 AM_INIT_AUTOMAKE
 AC_SUBST(RPM_RELEASE,1)
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
@@ -57,9 +57,9 @@ case "$ar_distro_id" in
        AC_SUBST(APACHE_PKG,"apache2")
        AC_SUBST(APACHE_CONFIG_DIR,"/etc/apache2/conf.d")
        AC_SUBST(USERMODE_PKG,"")
-       AC_SUBST(DOC_PATH,"/usr/share/doc/gpi_send")
+       AC_SUBST(DOC_PATH,"/usr/share/doc/gpisend")
        AC_SUBST(HAVE_USERMODE,"no")
-       AC_SUBST(GPI_SEND_DESKTOP_FILE,"rivendell-rdalsaconfig-sudo.desktop")
+       AC_SUBST(GPISEND_DESKTOP_FILE,"rivendell-rdalsaconfig-sudo.desktop")
      ;;
 
      raspbian)
@@ -70,9 +70,9 @@ case "$ar_distro_id" in
        AC_SUBST(APACHE_PKG,"apache2")
        AC_SUBST(APACHE_CONFIG_DIR,"/etc/apache2/conf.d")
        AC_SUBST(USERMODE_PKG,"")
-       AC_SUBST(DOC_PATH,"/usr/share/doc/gpi_send")
+       AC_SUBST(DOC_PATH,"/usr/share/doc/gpisend")
        AC_SUBST(HAVE_USERMODE,"no")
-       AC_SUBST(GPI_SEND_DESKTOP_FILE,"rivendell-rdalsaconfig-sudo.desktop")
+       AC_SUBST(GPISEND_DESKTOP_FILE,"rivendell-rdalsaconfig-sudo.desktop")
      ;;
 
      linuxmint)
@@ -83,9 +83,9 @@ case "$ar_distro_id" in
        AC_SUBST(APACHE_PKG,"apache2")
        AC_SUBST(APACHE_CONFIG_DIR,"/etc/apache2/conf.d")
        AC_SUBST(USERMODE_PKG,"")
-       AC_SUBST(DOC_PATH,"/usr/share/doc/gpi_send")
+       AC_SUBST(DOC_PATH,"/usr/share/doc/gpisend")
        AC_SUBST(HAVE_USERMODE,"no")
-       AC_SUBST(GPI_SEND_DESKTOP_FILE,"rivendell-rdalsaconfig-sudo.desktop")
+       AC_SUBST(GPISEND_DESKTOP_FILE,"rivendell-rdalsaconfig-sudo.desktop")
      ;;
 
      ubuntu)
@@ -96,9 +96,9 @@ case "$ar_distro_id" in
        AC_SUBST(APACHE_PKG,"apache2")
        AC_SUBST(APACHE_CONFIG_DIR,"/etc/apache2/conf.d")
        AC_SUBST(USERMODE_PKG,"")
-       AC_SUBST(DOC_PATH,"/usr/share/doc/gpi_send")
+       AC_SUBST(DOC_PATH,"/usr/share/doc/gpisend")
        AC_SUBST(HAVE_USERMODE,"no")
-       AC_SUBST(GPI_SEND_DESKTOP_FILE,"rivendell-rdalsaconfig-sudo.desktop")
+       AC_SUBST(GPISEND_DESKTOP_FILE,"rivendell-rdalsaconfig-sudo.desktop")
      ;;
 
      centos|fedora|rhel|rocky)
@@ -119,9 +119,9 @@ case "$ar_distro_id" in
        AC_SUBST(APACHE_PKG,"httpd")
        AC_SUBST(APACHE_CONFIG_DIR,"/etc/httpd/conf.d")
        AC_SUBST(USERMODE_PKG,"usermode usermode-gtk")
-       AC_SUBST(DOC_PATH,"/usr/share/doc/gpi_send-$PACKAGE_VERSION")
+       AC_SUBST(DOC_PATH,"/usr/share/doc/gpisend-$PACKAGE_VERSION")
        AC_SUBST(HAVE_USERMODE,"yes")
-       AC_SUBST(GPI_SEND_DESKTOP_FILE,"rivendell-rdalsaconfig-root.desktop")
+       AC_SUBST(GPISEND_DESKTOP_FILE,"rivendell-rdalsaconfig-root.desktop")
        ;;
 
      *)
@@ -130,9 +130,9 @@ case "$ar_distro_id" in
        AC_SUBST(APACHE_PKG,"apache2")
        AC_SUBST(APACHE_CONFIG_DIR,"/etc/apache2/conf.d")
        AC_SUBST(USERMODE_PKG,"")
-       AC_SUBST(DOC_PATH,"/usr/share/doc/gpi_send")
+       AC_SUBST(DOC_PATH,"/usr/share/doc/gpisend")
        AC_SUBST(HAVE_USERMODE,"no")
-       AC_SUBST(GPI_SEND_DESKTOP_FILE,"rivendell-rdalsaconfig.desktop")
+       AC_SUBST(GPISEND_DESKTOP_FILE,"rivendell-rdalsaconfig.desktop")
      ;;
 esac
 
@@ -194,11 +194,11 @@ AC_CONFIG_FILES([ \
     debian/source/Makefile \
     helpers/Makefile \
     docs/Makefile \
-    src/gpi_send/Makefile \
+    src/gpisend/Makefile \
     src/gpioscan/Makefile \
     src/Makefile \
     systemd/Makefile \
-    systemd/gpi_send.service \
+    systemd/gpisend.service \
     build_debs.sh \
     Makefile ])
 AC_OUTPUT()

@@ -1,6 +1,6 @@
 // config.h
 //
-// Configuration for gpi_send(1)
+// Configuration for gpisend(1)
 //
 //   (C) Copyright 2026 Fred Gleason <fredg@paravelsystems.com>
 //
@@ -28,7 +28,7 @@
 
 #include <gpiod.h>
 
-#define CONFIG_DEFAULT_CONFIG_FILENAME "/etc/gpi_send.conf"
+#define CONFIG_DEFAULT_CONFIG_FILENAME "/etc/gpisend.conf"
 #define CONFIG_DEFAULT_CHIP_DEVICE "/dev/gpiochip0"
 #define CONFIG_DEFAULT_DEBOUNCE_PERIOD 1000
 #define CONFIG_DEFAULT_EDGE_TRIGGER "rising"

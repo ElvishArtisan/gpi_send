@@ -1,14 +1,14 @@
-Source: gpi_send
+Source: gpisend
 Section: audio
 Priority: optional
 Maintainer: Fred Gleason <fredg@paravelsystems.com>
-Build-Depends: debhelper-compat (= 12), autotools-dev
+Build-Depends: debhelper-compat (= 12), autotools-dev, libgpiod-dev (> 2.2.0)
 Standards-Version: 4.4.1
 
-Package: gpi_send
+Package: gpisend
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: GPI messenger
- Gpi_send is a service that emits network messages in response to GPIO events.
+ Gpisend is a service that emits network messages in response to GPIO events.
  
 
