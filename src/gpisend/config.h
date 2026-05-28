@@ -34,6 +34,8 @@
 #define CONFIG_DEFAULT_EDGE_TRIGGER "rising"
 #define CONFIG_DEFAULT_DESTINATION_ADDRESS "127.0.0.1"
 #define CONFIG_DEFAULT_DESTINATION_PORT "1234"
+#define CONFIG_DEFAULT_ACTIVE_LOW true
+#define CONFIG_DEFAULT_LINE_BIAS "pull-up"
 
 class Config
 {
@@ -44,6 +46,7 @@ class Config
   int debouncePeriod() const;
   enum gpiod_line_edge triggerCondition() const;
   bool activeLow() const;
+  enum gpiod_line_bias lineBias() const;
   int buttonQuantity() const;
   int buttonOffset(int n) const;
   QHostAddress destinationAddress(int n=-1) const;
@@ -60,6 +63,7 @@ class Config
   int d_debounce_period;
   enum gpiod_line_edge d_trigger_condition;
   bool d_active_low;
+  enum gpiod_line_bias d_line_bias;
   QList<int> d_button_offsets;
   QHostAddress d_default_destination_address;
   QList<QHostAddress> d_destination_addresses;

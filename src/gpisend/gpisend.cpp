@@ -156,7 +156,7 @@ void MainObject::InitializeGpio()
   gpiod_line_settings_set_direction(d_line_settings,GPIOD_LINE_DIRECTION_INPUT);
   gpiod_line_settings_set_edge_detection(d_line_settings,
 					 d_config->triggerCondition());
-  gpiod_line_settings_set_bias(d_line_settings,GPIOD_LINE_BIAS_PULL_UP);
+  gpiod_line_settings_set_bias(d_line_settings,d_config->lineBias());
   gpiod_line_settings_set_active_low(d_line_settings,d_config->activeLow());
   gpiod_line_settings_set_debounce_period_us(d_line_settings,
 					     d_config->debouncePeriod());

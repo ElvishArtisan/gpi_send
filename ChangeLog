@@ -14,3 +14,6 @@
 2026-05-28 Fred Gleason <fredg@paravelsystems.com>
 	* Added an 'ActiveLow=' directive to the '[Global]' section of
 	gpisend.conf(5).
+2026-05-28 Fred Gleason <fredg@paravelsystems.com>
+	* Added an 'LineBias' directive to the '[Global]' section of
+	gpisend.conf(5).

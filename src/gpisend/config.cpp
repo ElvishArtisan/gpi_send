@@ -59,6 +59,12 @@ bool Config::activeLow() const
 }
 
 
+enum gpiod_line_bias Config::lineBias() const
+{
+  return d_line_bias;
+}
+
+
 int Config::buttonQuantity() const
 {
   return d_button_offsets.size();
@@ -135,6 +141,27 @@ bool Config::load(const QString &filename)
   d_default_destination_address=
     p->addressValue("Global","DestinationAddress",
 		    CONFIG_DEFAULT_DESTINATION_ADDRESS);
+
+
+  QString bias=
+    p->stringValue("Global","LineBias",CONFIG_DEFAULT_LINE_BIAS);
+  d_line_bias=GPIOD_LINE_BIAS_UNKNOWN;
+  if(bias.toLower()=="disabled") {
+    d_line_bias=GPIOD_LINE_BIAS_DISABLED;
+  }
+  if(bias.toLower()=="pull-up") {
+    d_line_bias=GPIOD_LINE_BIAS_PULL_UP;
+  }
+  if(bias.toLower()=="pull-down") {
+    d_line_bias=GPIOD_LINE_BIAS_PULL_DOWN;
+  }
+  if(d_line_bias==GPIOD_LINE_BIAS_UNKNOWN) {
+    syslog(LOG_ERR,"invalid LineBias \"%s\" in configuration",
+	   bias.toUtf8().constData());
+    exit(1);
+  }
+
+
   if(d_default_destination_address.isNull()) {
     syslog(LOG_ERR,"invalid DestinationAddress \"%s\" in configuration",
 	   p->stringValue("Global","DestinationAddress",
