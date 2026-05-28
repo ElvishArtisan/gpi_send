@@ -43,6 +43,7 @@ class Config
   QString chipDevice() const;
   int debouncePeriod() const;
   enum gpiod_line_edge triggerCondition() const;
+  bool activeLow() const;
   int buttonQuantity() const;
   int buttonOffset(int n) const;
   QHostAddress destinationAddress(int n=-1) const;
@@ -58,6 +59,7 @@ class Config
   QString d_chip_device;
   int d_debounce_period;
   enum gpiod_line_edge d_trigger_condition;
+  bool d_active_low;
   QList<int> d_button_offsets;
   QHostAddress d_default_destination_address;
   QList<QHostAddress> d_destination_addresses;

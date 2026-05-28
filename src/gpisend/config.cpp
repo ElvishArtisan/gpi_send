@@ -53,6 +53,12 @@ enum gpiod_line_edge Config::triggerCondition() const
 }
 
 
+bool Config::activeLow() const
+{
+  return d_active_low;
+}
+
+
 int Config::buttonQuantity() const
 {
   return d_button_offsets.size();
@@ -125,6 +131,7 @@ bool Config::load(const QString &filename)
 	   edge.toUtf8().constData());
     exit(1);
   }
+  d_active_low=p->boolValue("Global","ActiveLow",true);
   d_default_destination_address=
     p->addressValue("Global","DestinationAddress",
 		    CONFIG_DEFAULT_DESTINATION_ADDRESS);
@@ -209,6 +216,12 @@ QString Config::dump()
   case GPIOD_LINE_EDGE_NONE:
     ret+=QString("TriggerCondition=none\n");
     break;
+  }
+  if(d_active_low) {
+    ret+=QString("ActiveLow=Yes\n");
+  }
+  else {
+    ret+=QString("ActiveLow=No\n");
   }
   ret+=QString("DestinationAddress=")+d_default_destination_address.toString()+
     "\n";

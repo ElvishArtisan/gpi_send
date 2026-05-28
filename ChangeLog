@@ -11,3 +11,6 @@
 	* Changed the package name from 'gpi_send' to 'gpisend'.
 2026-05-28 Fred Gleason <fredg@paravelsystems.com>
 	* Annotated the default configuration file for gpisend(1).
+2026-05-28 Fred Gleason <fredg@paravelsystems.com>
+	* Added an 'ActiveLow=' directive to the '[Global]' section of
+	gpisend.conf(5).
