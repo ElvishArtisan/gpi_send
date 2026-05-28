@@ -18,5 +18,5 @@ Makefile
 Makefile.in
 missing
 moc_*
-src/gpi_send/gpi_send
+src/gpisend/gpisend
 src/gpioscan/gpioscan
